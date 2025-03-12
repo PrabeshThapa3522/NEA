@@ -11,14 +11,17 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.12",
+    "axios": "^1.8.3",
     "bikram-sambat": "^1.7.0",
     "bikram-sambat-js": "^1.0.2",
+    "dom": "^0.0.3",
     "nepali-datepicker-reactjs": "^1.1.7",
     "node": "^23.9.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-nepali-calendar": "^1.1.5",
     "react-router-dom": "^7.3.0",
+    "router": "^1.3.8",
     "tailwindcss": "^4.0.12"
   },
   "devDependencies": {
