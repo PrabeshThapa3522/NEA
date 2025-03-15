@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 const Meeting_Table = () => {
   const [meetings, setMeeting] = useState([
     { id: 1, date: "2025-03-11", type: "Project Discussion", location: "Hayat Hotel", description: "Discuss project timeline and deliverables.", time: "10:00 AM" },
@@ -20,6 +21,8 @@ const Meeting_Table = () => {
     { id: 16, date: "2025-03-15", type: "Stakeholder Meeting", location: "Hotel Everest", description: "Quarterly meeting with stakeholders.", time: "11:00 AM" },
   
   ]);
+
+  
 
   // Function to convert time to a comparable format
   const convertToDateTime = (date, time) => {
@@ -63,6 +66,7 @@ const Meeting_Table = () => {
 
   return (
     <>
+   
       <div className="bg-gray-200 p-[1vw] md:pb-[0.5vh] md:p-[1vw] md:mt-[4vh] pt-[6vh]">
         <div className="overflow-x-auto">
           <table className="w-full border-collapse border border-gray-400">
