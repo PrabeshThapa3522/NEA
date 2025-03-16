@@ -14,6 +14,22 @@ const Table = ()=>
         const formattedHour = hour % 12 || 12; // Convert 0 to 12 for AM
         return `${formattedHour}:${minutes} ${ampm}`;
       };
+
+      const formatDate = (date) => {
+        const d = new Date(date);
+        return d.toISOString().split("T")[0]; // Convert to YYYY-MM-DD format
+    };
+
+    const payload = {
+        date: newMeeting.date, // Convert to string explicitly
+        type: newMeeting.type.trim(),
+        location: newMeeting.location.trim(),
+        description: newMeeting.description.trim(),
+        time: newMeeting.time.trim(), // Ensure time is in string format
+        priority: newMeeting.priority || "normal", // Include priority field
+    };
+
+
     return(
         <>
             {/* Added meeting table */}
@@ -34,7 +50,7 @@ const Table = ()=>
                         {meetings.map((meeting, index) => (
                             <tr key={index} className="text-center  hover:bg-gray-100 odd:bg-white">
                             <td className='border w-[] p-2'>{meeting.id}</td>
-                            <td className="border w-[] p-2">{meeting.date}</td>
+                            <td className="border w-[] p-2">{formatDate(meeting.date)}</td>
                             <td className="border w-[] p-2">{formatTime(meeting.time)}</td>
                             <td className="border w-[] p-2">{meeting.type}</td>
                             <td className="border w-[] p-2">{meeting.location}</td>

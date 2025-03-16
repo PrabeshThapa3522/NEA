@@ -266,6 +266,10 @@ const Add = () => {
         const formattedHour = hour % 12 || 12;
         return `${formattedHour}:${minutes} ${ampm}`;
     };
+    const formatDate = (date) => {
+        const d = new Date(date);
+        return d.toISOString().split("T")[0]; // Convert to YYYY-MM-DD format
+    };
 
     // State for meetings
     const [meetings, setMeetings] = useState([]);
@@ -330,11 +334,11 @@ const Add = () => {
 
         // Ensure all values are strings before sending
         const payload = {
-            date: newMeeting.date.toString(), // Convert to string explicitly
+            date: newMeeting.date, // Convert to string explicitly
             type: newMeeting.type.trim(),
             location: newMeeting.location.trim(),
             description: newMeeting.description.trim(),
-            time: newMeeting.time.toString(), // Ensure time is in string format
+            time: newMeeting.time.trim(), // Ensure time is in string format
             priority: newMeeting.priority || "normal", // Include priority field
         };
 
@@ -473,6 +477,7 @@ const Add = () => {
                             <th className="border border-gray-300 p-2 text-center">Date</th>
                             <th className="border border-gray-300 p-2 text-center">Time</th>
                             <th className="border border-gray-300 p-2 text-center">Location</th>
+                            <th className="border border-gray-300 p-2 text-center">Meeting Type</th>
                             <th className="border border-gray-300 p-2 text-center">Description</th>
                             <th className="border border-gray-300 p-2 text-center">Priority</th>
                             <th className="border border-gray-300 p-2 text-center">Actions</th>
@@ -481,9 +486,10 @@ const Add = () => {
                     <tbody>
                         {meetings.map((meeting) => (
                             <tr key={meeting._id}>
-                                <td className="border border-gray-300 p-2 text-center">{meeting.date}</td>
+                                <td className="border border-gray-300 p-2 text-center">{formatDate(meeting.date)}</td>
                                 <td className="border border-gray-300 p-2 text-center">{formatTime(meeting.time)}</td>
                                 <td className="border border-gray-300 p-2 text-center">{meeting.location}</td>
+                                <td className="border border-gray-300 p-2 text-center">{meeting.type}</td>
                                 <td className="border border-gray-300 p-2 text-center">{meeting.description}</td>
                                 <td className="border border-gray-300 p-2 text-center">{meeting.priority}</td>
                                 <td className="border border-gray-300 p-2 text-center">
@@ -510,5 +516,6 @@ const Add = () => {
 };
 
 export default Add;
+
 
 
