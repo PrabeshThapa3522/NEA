@@ -75,16 +75,16 @@ git clone https://github.com/PrabeshThapa3522/NEA.git
 cd NEA
 
 ## Install Frontend dependencies
-cd Client
-npm install
-npm run dev # for running frontend
+- cd Client
+- npm install
+- npm run dev # for running frontend
 
 ## Install Backend dependencies
-cd ../Server
-npm install
-nodemon
+- cd ../Server
+- npm install
+- nodemon
 
 ## for environment variable
-PORT=5001
-MONGO_URI=your_mongodb_connection
-JWT_SECRET=your_secret_key
+- PORT=5001
+- MONGO_URI=your_mongodb_connection
+- JWT_SECRET=your_secret_key
