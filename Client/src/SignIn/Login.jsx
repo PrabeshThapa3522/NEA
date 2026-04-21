@@ -182,14 +182,14 @@ const Login = () => {
             </button>
           </div>
 
-          {/* <div className="mt-4 text-sm text-gray-700 text-center">
+          <div className="mt-4 text-sm text-gray-700 text-center">
             Don't have an account?
             <Link to="/register" className="pl-2 text-sm text-gray-900 hover:text-blue-600">
               Sign Up
             </Link>
 
           </div>
-*/}
+
 
         </form>
       </div>

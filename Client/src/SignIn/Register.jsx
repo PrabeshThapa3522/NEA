@@ -302,12 +302,12 @@ const Register = () => {
               Add
             </button>
           </div>
-          {/* <div className="mt-4 text-sm text-gray-700 text-center">
+          <div className="mt-4 text-sm text-gray-700 text-center">
             Already have an account?
             <Link to="/" className="pl-2 text-sm text-gray-900 hover:text-blue-600">
               Sign in
             </Link>
-          </div> */}
+          </div>
         </form>
       </div>
     </div>
